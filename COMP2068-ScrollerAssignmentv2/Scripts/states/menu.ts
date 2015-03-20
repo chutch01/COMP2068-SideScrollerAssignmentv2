@@ -16,6 +16,7 @@ module states {
         public game: createjs.Container;
         public hallway: objects.Hallway;
         public playButton: objects.Button;
+        public howtoButton: objects.Button;
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++
         constructor() {
@@ -37,6 +38,11 @@ module states {
             this.game.addChild(this.playButton);
             this.playButton.on("click", this.playButtonClicked, this);
 
+            this.howtoButton = new objects.Button("howtoButton", constants.SCREEN_CENTER_WIDTH, 300);
+            this.game.addChild(this.howtoButton);
+            this.howtoButton.on("click", this.howtoButtonClicked, this);
+            
+
 
             stage.addChild(this.game);
         } // constructor end
@@ -48,6 +54,12 @@ module states {
             createjs.Sound.stop();
             stage.removeChild(this.game);
             currentState = constants.PLAY_STATE;
+            stateChanged = true;
+        }
+        howtoButtonClicked() {
+            this.game.removeAllChildren();
+            stage.removeChild(this.game);
+            currentState = constants.HOW_TO_STATE;
             stateChanged = true;
         }
 

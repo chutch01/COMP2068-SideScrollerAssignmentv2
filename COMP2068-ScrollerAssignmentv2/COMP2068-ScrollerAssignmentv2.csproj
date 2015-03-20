@@ -67,6 +67,8 @@
     <Content Include="assets\images\ball.png" />
     <Content Include="assets\images\enemy.png" />
     <Content Include="assets\images\hallway.png" />
+    <Content Include="assets\images\howtoButton.png" />
+    <Content Include="assets\images\howtoScreen.png" />
     <Content Include="assets\images\playButton.png" />
     <Content Include="assets\images\samus.png" />
     <Content Include="assets\images\tryAgainButton.png" />
@@ -108,6 +110,7 @@
     <TypeScriptCompile Include="Scripts\objects\samus.ts" />
     <TypeScriptCompile Include="Scripts\objects\scoreboard.ts" />
     <TypeScriptCompile Include="Scripts\states\gameover.ts" />
+    <TypeScriptCompile Include="Scripts\states\howto.ts" />
     <TypeScriptCompile Include="Scripts\states\menu.ts" />
     <TypeScriptCompile Include="Scripts\states\play.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />

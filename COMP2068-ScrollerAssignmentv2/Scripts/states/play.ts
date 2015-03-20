@@ -76,7 +76,7 @@ module states {
                     createjs.Sound.play(collider.soundString);
                     collider.isColliding = true;
                     switch (collider.name) {
-                        case "island":
+                        case "ball":
                             this.scoreboard.score += 100;
                             break;
                         case "enemy":

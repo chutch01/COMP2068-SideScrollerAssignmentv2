@@ -19,6 +19,7 @@
 /// <reference path="states/gameover.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/menu.ts" />
+/// <reference path="states/howto.ts" />
 
 
 
@@ -43,6 +44,7 @@ var stateChanged: boolean = false;
 var gameOver: states.GameOver;
 var play: states.Play;
 var menu: states.Menu;
+var howTo: states.HowTo;
 
 
 // asset manifest - array of asset objects
@@ -53,6 +55,8 @@ var manifest = [
     { id: "samus", src: "assets/images/samus.png" },
     { id: "tryAgainButton", src: "assets/images/tryAgainButton.png" },
     { id: "playButton", src: "assets/images/playButton.png" },
+    { id: "howtoButton", src: "assets/images/howtoButton.png" },
+    { id: "howtoScreen", src: "assets/images/howtoScreen.png" },
     { id: "engine", src: "assets/audio/engine.ogg" },
     { id: "randomize", src: "assets/audio/randomize.wav" },
     { id: "explosion", src: "assets/audio/explosion.wav" },
@@ -133,6 +137,11 @@ function changeState(state: number) {
             // Instantiate Game Over State
             gameOver = new states.GameOver();
             currentStateFunction = gameOver;
+            break;
+        case constants.HOW_TO_STATE:
+            // Instantiate How To State
+            howTo = new states.HowTo();
+            currentStateFunction = howTo;
             break;
     }
 
