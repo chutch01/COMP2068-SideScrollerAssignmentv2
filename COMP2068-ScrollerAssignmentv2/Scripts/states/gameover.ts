@@ -2,7 +2,7 @@
 /// <reference path="../objects/gameobject.ts" />
 /// <reference path="../objects/cloud.ts" />
 /// <reference path="../objects/island.ts" />
-/// <reference path="../objects/ocean.ts" />
+/// <reference path="../objects/hallway.ts" />
 /// <reference path="../objects/plane.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
@@ -14,7 +14,7 @@ module states {
     export class GameOver {
         // INSTANCE VARIABLES ++++++++++++++++++++++++++++++++++++++++++++++
         public game: createjs.Container;
-        public ocean: objects.Ocean;
+        public ocean: objects.Hallway;
         public tryAgainButton: objects.Button;
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -23,7 +23,7 @@ module states {
             this.game = new createjs.Container();
 
             // Add ocean to game
-            this.ocean = new objects.Ocean();
+            this.ocean = new objects.Hallway();
             this.game.addChild(this.ocean);
 
             var gameOverLabel: objects.Label = new objects.Label("GAME OVER", constants.SCREEN_CENTER_WIDTH, 100);

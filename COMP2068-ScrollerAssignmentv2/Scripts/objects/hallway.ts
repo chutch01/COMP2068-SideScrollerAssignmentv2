@@ -1,6 +1,6 @@
 ﻿module objects {
 
-    export class Ocean extends createjs.Bitmap {
+    export class Hallway extends createjs.Bitmap {
         // PUBLIC VARIABLES
         public width;
         public height;

@@ -2,7 +2,7 @@
 /// <reference path="../objects/gameobject.ts" />
 /// <reference path="../objects/cloud.ts" />
 /// <reference path="../objects/island.ts" />
-/// <reference path="../objects/ocean.ts" />
+/// <reference path="../objects/hallway.ts" />
 /// <reference path="../objects/plane.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
@@ -17,7 +17,7 @@ module states {
         public plane: objects.Plane;
         public island: objects.Island;
         public clouds: objects.Cloud[] = [];
-        public ocean: objects.Ocean;
+        public hallway: objects.Hallway;
         public scoreboard: objects.ScoreBoard;
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -26,8 +26,8 @@ module states {
             this.game = new createjs.Container();
 
             // Add ocean to game
-            this.ocean = new objects.Ocean();
-            this.game.addChild(this.ocean);
+            this.hallway = new objects.Hallway();
+            this.game.addChild(this.hallway);
 
 
             // Add island to game
@@ -91,7 +91,7 @@ module states {
         // UPDATE METHOD
         public update() {
 
-            this.ocean.update();
+            this.hallway.update();
             this.plane.update();
             this.island.update();
 

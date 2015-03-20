@@ -2,7 +2,7 @@
 /// <reference path="../objects/gameobject.ts" />
 /// <reference path="../objects/cloud.ts" />
 /// <reference path="../objects/island.ts" />
-/// <reference path="../objects/ocean.ts" />
+/// <reference path="../objects/hallway.ts" />
 /// <reference path="../objects/plane.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
@@ -14,7 +14,7 @@ module states {
     export class Menu {
         // INSTANCE VARIABLES ++++++++++++++++++++++++++++++++++++++++++++++
         public game: createjs.Container;
-        public ocean: objects.Ocean;
+        public hallway: objects.Hallway;
         public playButton: objects.Button;
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -23,8 +23,8 @@ module states {
             this.game = new createjs.Container();
 
             // Add ocean to game
-            this.ocean = new objects.Ocean();
-            this.game.addChild(this.ocean);
+            this.hallway = new objects.Hallway();
+            this.game.addChild(this.hallway);
 
             var mailPilotLabel: objects.Label = new objects.Label("MAIL PILOT", constants.SCREEN_CENTER_WIDTH, 100);
             mailPilotLabel.font = "80px Consolas";
@@ -52,7 +52,7 @@ module states {
         // UPDATE METHOD
         public update() {
 
-            this.ocean.update();
+            this.hallway.update();
 
         } // update method end
 
