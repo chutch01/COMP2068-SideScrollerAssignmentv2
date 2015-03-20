@@ -8,7 +8,7 @@
 /// <reference path="constants.ts" />
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/plane.ts" />
-/// <reference path="objects/island.ts" />
+/// <reference path="objects/ball.ts" />
 /// <reference path="objects/enemy.ts" />
 /// <reference path="objects/hallway.ts" />
 
@@ -48,13 +48,13 @@ var menu: states.Menu;
 // asset manifest - array of asset objects
 var manifest = [
     { id: "enemy", src: "assets/images/enemy.png" },
-    { id: "island", src: "assets/images/island.png" },
+    { id: "ball", src: "assets/images/ball.png" },
     { id: "hallway", src: "assets/images/hallway.png" },
     { id: "plane", src: "assets/images/plane.png" },
     { id: "tryAgainButton", src: "assets/images/tryAgainButton.png" },
     { id: "playButton", src: "assets/images/playButton.png" },
     { id: "engine", src: "assets/audio/engine.ogg" },
-    { id: "yay", src: "assets/audio/yay.ogg" },
+    { id: "randomize", src: "assets/audio/randomize.wav" },
     { id: "explosion", src: "assets/audio/explosion.wav" }
 
 ];

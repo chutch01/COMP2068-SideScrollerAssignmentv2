@@ -1,7 +1,7 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/gameobject.ts" />
 /// <reference path="../objects/enemy.ts" />
-/// <reference path="../objects/island.ts" />
+/// <reference path="../objects/ball.ts" />
 /// <reference path="../objects/hallway.ts" />
 /// <reference path="../objects/plane.ts" />
 /// <reference path="../objects/button.ts" />
@@ -15,7 +15,7 @@ module states {
         // INSTANCE VARIABLES ++++++++++++++++++++++++++++++++++++++++++++++
         public game: createjs.Container;
         public plane: objects.Plane;
-        public island: objects.Island;
+        public ball: objects.Ball;
         public enemies: objects.Enemy[] = [];
         public hallway: objects.Hallway;
         public scoreboard: objects.ScoreBoard;
@@ -31,8 +31,8 @@ module states {
 
 
             // Add island to game
-            this.island = new objects.Island();
-            this.game.addChild(this.island);
+            this.ball = new objects.Ball();
+            this.game.addChild(this.ball);
 
 
             // Add plane to game
@@ -93,7 +93,7 @@ module states {
 
             this.hallway.update();
             this.plane.update();
-            this.island.update();
+            this.ball.update();
 
             if (this.scoreboard.lives > 0) {
                 for (var enemy = constants.ENEMY_NUM; enemy > 0; enemy--) {
@@ -101,7 +101,7 @@ module states {
                     this.checkCollision(this.enemies[enemy]);
                 }
 
-                this.checkCollision(this.island);
+                this.checkCollision(this.ball);
             }
 
             this.scoreboard.update();

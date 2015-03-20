@@ -1,15 +1,15 @@
 ﻿module objects {
 
-    export class Island extends objects.GameObject {
+    export class Ball extends objects.GameObject {
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++
         constructor() {
-            super("island");
+            super("ball");
 
-            this.name = "island";
+            this.name = "ball";
 
-            this._dy = 5;
-            this.soundString = "yay";
+            this._dx = 5;
+            this.soundString = "randomize";
 
             this._reset();
             
@@ -18,12 +18,12 @@
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++
         private _reset() {
             // set the island to start at a random x value
-            this.x = Math.floor(Math.random() * constants.SCREEN_WIDTH);
-            this.y = -this.height;
+            this.y = Math.floor(Math.random() * constants.SCREEN_HEIGHT);
+            this.x = Math.floor(Math.random() * constants.SCREEN_HEIGHT) + constants.SCREEN_WIDTH;
         }
 
         private _checkBounds() {
-            if (this.y > (constants.SCREEN_HEIGHT + this.height)) {
+            if (this.x < 0 - this.width) {
                 this._reset();
             }
         }
@@ -32,7 +32,7 @@
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++
 
         public update() {
-            this.y += this._dy;
+            this.x -= this._dx;
 
             this._checkBounds();
         }
