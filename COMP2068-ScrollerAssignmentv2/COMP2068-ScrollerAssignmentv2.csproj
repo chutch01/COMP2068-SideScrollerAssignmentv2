@@ -60,8 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\audio\engine.ogg" />
-    <Content Include="assets\audio\thunder.ogg" />
+    <Content Include="assets\audio\explosion.wav" />
     <Content Include="assets\audio\yay.ogg" />
+    <Content Include="assets\images\enemy.png" />
     <Content Include="assets\images\hallway.png" />
     <Content Include="assets\images\playButton.png" />
     <Content Include="assets\images\tryAgainButton.png" />
@@ -74,7 +75,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\cloud.png" />
     <Content Include="assets\images\island.png" />
     <Content Include="assets\images\ocean.gif" />
     <Content Include="assets\images\plane.png" />
@@ -96,7 +96,7 @@
     <TypeScriptCompile Include="Scripts\constants.ts" />
     <TypeScriptCompile Include="Scripts\game.ts" />
     <TypeScriptCompile Include="Scripts\objects\button.ts" />
-    <TypeScriptCompile Include="Scripts\objects\cloud.ts" />
+    <TypeScriptCompile Include="Scripts\objects\enemy.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\island.ts" />
     <TypeScriptCompile Include="Scripts\objects\label.ts" />

@@ -1,12 +1,12 @@
 ﻿module objects {
 
-    export class Cloud extends objects.GameObject {
+    export class Enemy extends objects.GameObject {
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++
         constructor() {
-            super("cloud");
-            this.name = "cloud";
-            this.soundString = "thunder";
+            super("enemy");
+            this.name = "enemy";
+            this.soundString = "explosion";
 
             this._reset();
 
@@ -15,15 +15,15 @@
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++
         private _reset() {
             // set the island to start at a random x value
-            this.x = Math.floor(Math.random() * constants.SCREEN_WIDTH);
-            this.y = -this.height;
+            this.y = Math.floor(Math.random() * constants.SCREEN_HEIGHT);
+            this.x = Math.floor(Math.random() * constants.SCREEN_HEIGHT) + constants.SCREEN_WIDTH;
             // add drift to the cloud 
-            this._dy = Math.floor(Math.random() * 5) + 5;
-            this._dx = Math.floor(Math.random() * 4) - 2;
+            //this._dy = Math.floor(Math.random() * 5) + 5;
+            this._dx = -5;
         }
 
         private _checkBounds() {
-            if (this.y > (constants.SCREEN_HEIGHT + this.height)) {
+            if (this.x <= 0 - this.width) {
                 this._reset();
             }
         }
@@ -32,7 +32,7 @@
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++
 
         public update() {
-            this.y += this._dy;
+            //this.y += this._dy;
             this.x += this._dx;
 
 

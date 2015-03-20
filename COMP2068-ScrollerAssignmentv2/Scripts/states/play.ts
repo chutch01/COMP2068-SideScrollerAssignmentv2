@@ -1,6 +1,6 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/gameobject.ts" />
-/// <reference path="../objects/cloud.ts" />
+/// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/island.ts" />
 /// <reference path="../objects/hallway.ts" />
 /// <reference path="../objects/plane.ts" />
@@ -16,7 +16,7 @@ module states {
         public game: createjs.Container;
         public plane: objects.Plane;
         public island: objects.Island;
-        public clouds: objects.Cloud[] = [];
+        public enemies: objects.Enemy[] = [];
         public hallway: objects.Hallway;
         public scoreboard: objects.ScoreBoard;
 
@@ -40,9 +40,9 @@ module states {
             this.game.addChild(this.plane);
 
             // Add clouds to game
-            for (var cloud = constants.CLOUD_NUM; cloud > 0; cloud--) {
-                this.clouds[cloud] = new objects.Cloud();
-                this.game.addChild(this.clouds[cloud]);
+            for (var enemy = constants.ENEMY_NUM; enemy > 0; enemy--) {
+                this.enemies[enemy] = new objects.Enemy();
+                this.game.addChild(this.enemies[enemy]);
             }
 
             this.scoreboard = new objects.ScoreBoard(this.game);
@@ -78,7 +78,7 @@ module states {
                         case "island":
                             this.scoreboard.score += 100;
                             break;
-                        case "cloud":
+                        case "enemy":
                             this.scoreboard.lives--;
                             break;
                     }
@@ -96,9 +96,9 @@ module states {
             this.island.update();
 
             if (this.scoreboard.lives > 0) {
-                for (var cloud = constants.CLOUD_NUM; cloud > 0; cloud--) {
-                    this.clouds[cloud].update();
-                    this.checkCollision(this.clouds[cloud]);
+                for (var enemy = constants.ENEMY_NUM; enemy > 0; enemy--) {
+                    this.enemies[enemy].update();
+                    this.checkCollision(this.enemies[enemy]);
                 }
 
                 this.checkCollision(this.island);

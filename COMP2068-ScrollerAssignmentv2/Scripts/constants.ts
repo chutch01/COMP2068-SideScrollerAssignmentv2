@@ -13,7 +13,7 @@
 
     // Game Constants
     export var PLAYER_LIVES: number = 5;
-    export var CLOUD_NUM: number = 3;
+    export var ENEMY_NUM: number = 10;
 
     // States Constants
     export var MENU_STATE: number = 0;
