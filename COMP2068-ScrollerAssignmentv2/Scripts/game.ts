@@ -49,7 +49,7 @@ var menu: states.Menu;
 var manifest = [
     { id: "cloud", src: "assets/images/cloud.png" },
     { id: "island", src: "assets/images/island.png" },
-    { id: "ocean", src: "assets/images/ocean.gif" },
+    { id: "hallway", src: "assets/images/hallway.png" },
     { id: "plane", src: "assets/images/plane.png" },
     { id: "tryAgainButton", src: "assets/images/tryAgainButton.png" },
     { id: "playButton", src: "assets/images/playButton.png" },

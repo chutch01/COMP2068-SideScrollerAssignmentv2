@@ -62,6 +62,7 @@
     <Content Include="assets\audio\engine.ogg" />
     <Content Include="assets\audio\thunder.ogg" />
     <Content Include="assets\audio\yay.ogg" />
+    <Content Include="assets\images\hallway.png" />
     <Content Include="assets\images\playButton.png" />
     <Content Include="assets\images\tryAgainButton.png" />
     <Content Include="packages.config" />

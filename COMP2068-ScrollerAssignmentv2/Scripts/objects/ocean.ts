@@ -6,11 +6,11 @@
         public height;
 
         // PRIVATE VARIABLE
-        private _dy = 5;
+        private _dx = -5;
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++
         constructor() {
-            super(assetLoader.getResult("ocean"));
+            super(assetLoader.getResult("hallway"));
 
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
@@ -22,12 +22,12 @@
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++
         private _reset() {
             // set the island to start at a random x value
-            this.x = 0;
-            this.y = -constants.OCEAN_RESET_HEIGHT;
+            this.x = constants.OCEAN_RESET_WIDTH;
+            this.y =0;
         }
 
         private _checkBounds() {
-            if (this.y >= 0) {
+            if (this.x <= -125) {
                 this._reset();
             }
         }
@@ -36,7 +36,7 @@
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++
 
         public update() {
-            this.y += this._dy;
+            this.x += this._dx;
 
             this._checkBounds();
         }
