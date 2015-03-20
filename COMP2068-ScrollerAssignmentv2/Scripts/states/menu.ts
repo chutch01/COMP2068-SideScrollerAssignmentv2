@@ -28,7 +28,7 @@ module states {
             this.hallway = new objects.Hallway();
             this.game.addChild(this.hallway);
 
-            var mailPilotLabel: objects.Label = new objects.Label("MAIL PILOT", constants.SCREEN_CENTER_WIDTH, 100);
+            var mailPilotLabel: objects.Label = new objects.Label("MEDTROID FLYER", constants.SCREEN_CENTER_WIDTH, 100);
             mailPilotLabel.font = "80px Consolas";
             mailPilotLabel.regX = mailPilotLabel.getMeasuredWidth() * 0.5;
             mailPilotLabel.regY = mailPilotLabel.getMeasuredHeight() * 0.5;

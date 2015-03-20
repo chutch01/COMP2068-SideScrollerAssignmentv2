@@ -21,6 +21,31 @@
 /// <reference path="states/menu.ts" />
 /// <reference path="states/howto.ts" />
 
+/*
+ * Cody Hutchinson
+ * Assignment 2: Side Scroller
+ * March 20th, 2015
+ * 
+ * This is Version 2 of the assignment 2 project to create a side scroller
+ * Objective of the program is to crate a sidescrolling game where you must collect eneygy balls and avoid enemies
+ * 
+ * Version 1 (which can be found on github) had the ability to fire lasers, but due to the structure of it, it needed to be scrapped
+ * 
+ * The plan is to resubmit this version with a modified laser firing function, so you can destroy the enemies and get points
+ * 
+ * Version 1 and this version are both available on github
+ * 
+ * 
+ * Version 1:
+ * https://github.com/chutch01/COMP2068-SideScrollerAssignment
+ * 
+ * 
+ * Version 2:
+ * https://github.com/chutch01/COMP2068-SideScrollerAssignmentv2
+ * 
+ * 
+ * 
+ */
 
 
 

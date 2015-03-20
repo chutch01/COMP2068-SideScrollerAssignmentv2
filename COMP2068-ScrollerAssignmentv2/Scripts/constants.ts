@@ -2,7 +2,7 @@
     // Font Constants
     export var FONT_SIZE: string = "40px";
     export var FONT_FAMILY: string = "Consolas";
-    export var FONT_COLOUR: string = "#FFFF00";
+    export var FONT_COLOUR: string = "#FF0000";
 
     // Stage Constants
     export var SCREEN_WIDTH: number = 640;
