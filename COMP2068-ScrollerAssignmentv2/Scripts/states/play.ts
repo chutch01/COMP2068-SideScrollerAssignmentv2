@@ -3,7 +3,7 @@
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/ball.ts" />
 /// <reference path="../objects/hallway.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/samus.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/scoreboard.ts" />
@@ -14,7 +14,7 @@ module states {
     export class Play {
         // INSTANCE VARIABLES ++++++++++++++++++++++++++++++++++++++++++++++
         public game: createjs.Container;
-        public plane: objects.Plane;
+        public samus: objects.Samus;
         public ball: objects.Ball;
         public enemies: objects.Enemy[] = [];
         public hallway: objects.Hallway;
@@ -36,8 +36,8 @@ module states {
 
 
             // Add plane to game
-            this.plane = new objects.Plane();
-            this.game.addChild(this.plane);
+            this.samus = new objects.Samus();
+            this.game.addChild(this.samus);
 
             // Add clouds to game
             for (var enemy = constants.ENEMY_NUM; enemy > 0; enemy--) {
@@ -65,12 +65,12 @@ module states {
         checkCollision(collider: objects.GameObject) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
-            p1.x = this.plane.x;
-            p1.y = this.plane.y;
+            p1.x = this.samus.x;
+            p1.y = this.samus.y;
             p2.x = collider.x;
             p2.y = collider.y;
             // Check for Collision
-            if (this.distance(p2, p1) < ((this.plane.height * 0.5) + (collider.height * 0.5))) {
+            if (this.distance(p2, p1) < ((this.samus.height * 0.5) + (collider.height * 0.5))) {
                 if (!collider.isColliding) { // Collision has occurred
                     createjs.Sound.play(collider.soundString);
                     collider.isColliding = true;
@@ -92,7 +92,7 @@ module states {
         public update() {
 
             this.hallway.update();
-            this.plane.update();
+            this.samus.update();
             this.ball.update();
 
             if (this.scoreboard.lives > 0) {
