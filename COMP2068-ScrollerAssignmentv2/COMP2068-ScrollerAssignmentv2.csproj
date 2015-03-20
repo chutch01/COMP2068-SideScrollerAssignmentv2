@@ -59,9 +59,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\audio\brinstar.mp3" />
     <Content Include="assets\audio\engine.ogg" />
     <Content Include="assets\audio\explosion.wav" />
     <Content Include="assets\audio\randomize.wav" />
+    <Content Include="assets\audio\title.mp3" />
     <Content Include="assets\images\ball.png" />
     <Content Include="assets\images\enemy.png" />
     <Content Include="assets\images\hallway.png" />

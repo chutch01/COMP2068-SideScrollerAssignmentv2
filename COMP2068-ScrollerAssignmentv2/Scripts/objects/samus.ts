@@ -19,7 +19,7 @@
 
             this.x = 50;
 
-            createjs.Sound.play("engine", { loop: -1 });
+           // createjs.Sound.play("engine", { loop: -1 });
             
         }
 

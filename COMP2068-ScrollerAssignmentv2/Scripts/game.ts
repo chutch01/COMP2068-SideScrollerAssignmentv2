@@ -55,7 +55,10 @@ var manifest = [
     { id: "playButton", src: "assets/images/playButton.png" },
     { id: "engine", src: "assets/audio/engine.ogg" },
     { id: "randomize", src: "assets/audio/randomize.wav" },
-    { id: "explosion", src: "assets/audio/explosion.wav" }
+    { id: "explosion", src: "assets/audio/explosion.wav" },
+    { id: "brinstar", src: "assets/audio/brinstar.mp3" },
+    { id: "title", src: "assets/audio/title.mp3" }
+
 
 ];
 
@@ -76,7 +79,6 @@ function init() {
     createjs.Ticker.setFPS(60); // 60 frames per second
     createjs.Ticker.addEventListener("tick", gameLoop);
     setupStats();
-
     currentState = constants.MENU_STATE;
     changeState(currentState);
 }

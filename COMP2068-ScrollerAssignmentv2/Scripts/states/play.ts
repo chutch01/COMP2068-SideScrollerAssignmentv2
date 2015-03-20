@@ -22,6 +22,7 @@ module states {
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++
         constructor() {
+            createjs.Sound.play("brinstar", { loop: -1 });
             // Instantiate Game Container
             this.game = new createjs.Container();
 

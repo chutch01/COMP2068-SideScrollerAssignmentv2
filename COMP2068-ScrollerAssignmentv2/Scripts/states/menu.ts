@@ -19,6 +19,7 @@ module states {
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++
         constructor() {
+            createjs.Sound.play("title", { loop: -1 });
             // Instantiate Game Container
             this.game = new createjs.Container();
 
@@ -44,6 +45,7 @@ module states {
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
         playButtonClicked() {
             this.game.removeAllChildren();
+            createjs.Sound.stop();
             stage.removeChild(this.game);
             currentState = constants.PLAY_STATE;
             stateChanged = true;
