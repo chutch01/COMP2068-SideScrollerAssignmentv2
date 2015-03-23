@@ -1,13 +1,16 @@
 ﻿module objects {
 
-    export class Samus extends createjs.Bitmap {
+    export class Samus extends objects.GameObject {
         public width: number;
         public height: number;
         public name: string;
+        public laser: objects.Laser;
+        public lasers: objects.Laser[] = [];
+        public totalLasers = constants.TOTAL_LASERS;
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++
         constructor() {
-            super(assetLoader.getResult("samus"));
+            super("samus");
 
             this.name = "samus";
 
@@ -19,7 +22,6 @@
 
             this.x = 50;
 
-           // createjs.Sound.play("engine", { loop: -1 });
             
         }
 
@@ -27,6 +29,14 @@
 
         public update() {
             this.y = stage.mouseY;
+        }
+        public shoot() {
+            this.lasers[this.totalLasers] = new objects.Laser(this.x, this.y, this);
+            stage.addChild(this.lasers[this.totalLasers]);
+            this.totalLasers++;
+            createjs.Sound.play("laser_sound");
+        }
+        public hit() {
         }
     }
 

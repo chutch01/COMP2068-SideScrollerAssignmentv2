@@ -38,6 +38,8 @@
 
             this._checkBounds();
         }
+        public hit() {
+        }
 
 
     }

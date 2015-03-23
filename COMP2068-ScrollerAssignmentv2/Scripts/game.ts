@@ -78,14 +78,15 @@ var manifest = [
     { id: "ball", src: "assets/images/ball.png" },
     { id: "hallway", src: "assets/images/hallway.png" },
     { id: "samus", src: "assets/images/samus.png" },
+    { id: "laser", src: "assets/images/laser.png" },
     { id: "tryAgainButton", src: "assets/images/tryAgainButton.png" },
     { id: "playButton", src: "assets/images/playButton.png" },
     { id: "howtoButton", src: "assets/images/howtoButton.png" },
     { id: "howtoScreen", src: "assets/images/howtoScreen.png" },
-    { id: "engine", src: "assets/audio/engine.ogg" },
     { id: "randomize", src: "assets/audio/randomize.wav" },
     { id: "explosion", src: "assets/audio/explosion.wav" },
     { id: "brinstar", src: "assets/audio/brinstar.mp3" },
+    { id: "laser_sound", src: "assets/audio/laser_sound.wav" },
     { id: "title", src: "assets/audio/title.mp3" }
 
 

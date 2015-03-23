@@ -17,6 +17,7 @@ module states {
         public samus: objects.Samus;
         public ball: objects.Ball;
         public enemies: objects.Enemy[] = [];
+        public laser: objects.Laser;
         public hallway: objects.Hallway;
         public scoreboard: objects.ScoreBoard;
 
@@ -104,7 +105,7 @@ module states {
 
                 this.checkCollision(this.ball);
             }
-
+            //this.laser.update();
             this.scoreboard.update();
 
             if (this.scoreboard.lives < 1) {

@@ -24,6 +24,9 @@
 
             this.isColliding = false;
         }
+       //set up an empty function that will have different characteristics depending on the object
+        public hit() {
+        }
 
 
     }
