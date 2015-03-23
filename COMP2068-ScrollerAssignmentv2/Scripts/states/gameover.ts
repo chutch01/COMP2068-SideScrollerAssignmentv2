@@ -4,6 +4,7 @@
 /// <reference path="../objects/ball.ts" />
 /// <reference path="../objects/hallway.ts" />
 /// <reference path="../objects/samus.ts" />
+/// <reference path="../objects/laser.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/scoreboard.ts" />

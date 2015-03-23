@@ -3,6 +3,7 @@
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/ball.ts" />
 /// <reference path="../objects/hallway.ts" />
+/// <reference path="../objects/laser.ts" />
 /// <reference path="../objects/samus.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
@@ -64,29 +65,29 @@ module states {
         } // distance end
 
         // CHeck Collision Method
-        checkCollision(collider: objects.GameObject) {
+        checkCollision(collider1: objects.GameObject, hit1: boolean, collider2: objects.GameObject, hit2: boolean) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
-            p1.x = this.samus.x;
-            p1.y = this.samus.y;
-            p2.x = collider.x;
-            p2.y = collider.y;
+            p1.x = collider1.x;
+            p1.y = collider1.y;
+            p2.x = collider2.x;
+            p2.y = collider2.y;
             // Check for Collision
-            if (this.distance(p2, p1) < ((this.samus.height * 0.5) + (collider.height * 0.5))) {
-                if (!collider.isColliding) { // Collision has occurred
-                    createjs.Sound.play(collider.soundString);
-                    collider.isColliding = true;
-                    switch (collider.name) {
-                        case "ball":
-                            this.scoreboard.score += 100;
-                            break;
-                        case "enemy":
-                            this.scoreboard.lives--;
-                            break;
+            if (this.distance(p2, p1) < ((collider1.height * 0.5) + (collider2.height * 0.5))) {
+                if (!collider2.isColliding && !collider1.isColliding) { // Collision has occurred
+                    createjs.Sound.play(collider2.soundString);
+                    collider2.isColliding = true;
+                    collider1.isColliding = true;
+                    if (hit1) {
+                        collider1.hit();
+                    }
+                    if (hit2) {
+                        collider2.hit();
                     }
                 }
             } else {
-                collider.isColliding = false;
+                collider1.isColliding = false;
+                collider2.isColliding = false;
             }
     } // checkCollision end
 
@@ -100,10 +101,10 @@ module states {
             if (this.scoreboard.lives > 0) {
                 for (var enemy = constants.ENEMY_NUM; enemy > 0; enemy--) {
                     this.enemies[enemy].update();
-                    this.checkCollision(this.enemies[enemy]);
+                    this.checkCollision(this.samus, true, this.enemies[enemy], true);
                 }
 
-                this.checkCollision(this.ball);
+                this.checkCollision(this.samus, true, this.ball, true);
             }
             //this.laser.update();
             this.scoreboard.update();

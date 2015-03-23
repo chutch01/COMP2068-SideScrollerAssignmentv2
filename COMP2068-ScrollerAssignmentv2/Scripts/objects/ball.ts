@@ -37,6 +37,7 @@
             this._checkBounds();
         }
         public hit() {
+            this.soundString = "randomize";
         }
 
         
